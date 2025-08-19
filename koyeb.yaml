@@ -17,5 +17,9 @@ services:
       BOT_TOKEN: ""
       OWNER_ID: ""
       MongoDB_url: ""
+      UPDATES_CHANNEL: ""
+      SUPPORT_GROUP: ""
+      START_ANIMATION: ""
+
 
 
