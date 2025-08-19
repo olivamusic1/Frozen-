@@ -373,6 +373,14 @@ async def start_handler(_, message):
     support_text = to_bold_unicode("Support")
     help_text = to_bold_unicode("Help")
 
+    # Fetch from env with fallbacks
+    updates_channel = os.getenv("UPDATES_CHANNEL", "https://t.me/vibeshiftbots")
+    support_group = os.getenv("SUPPORT_GROUP", "https://t.me/Frozensupport1")
+    start_animation = os.getenv(
+        "START_ANIMATION",
+        "https://frozen-imageapi.lagendplayersyt.workers.dev/file/2e483e17-05cb-45e2-b166-1ea476ce9521.mp4"
+    )
+
     caption = (
         f"👋 нєу {user_link} 💠, 🥀\n\n"
         f">🎶 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 {BOT_NAME.upper()}! 🎵\n"
@@ -388,17 +396,17 @@ async def start_handler(_, message):
     buttons = [
         [
             InlineKeyboardButton(f"➕ {add_me_text}", url=f"{BOT_LINK}?startgroup=true"),
-            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/vibeshiftbots")
+            InlineKeyboardButton(f"📢 {updates_text}", url=updates_channel)
         ],
         [
-            InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/Frozensupport1"),
+            InlineKeyboardButton(f"💬 {support_text}", url=support_group),
             InlineKeyboardButton(f"❓ {help_text}", callback_data="show_help")
         ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
 
     await message.reply_animation(
-        animation="https://frozen-imageapi.lagendplayersyt.workers.dev/file/2e483e17-05cb-45e2-b166-1ea476ce9521.mp4",
+        animation=start_animation,
         caption=caption,
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=reply_markup
@@ -428,6 +436,9 @@ async def go_back_callback(_, callback_query):
     support_text = to_bold_unicode("Support")
     help_text = to_bold_unicode("Help")
 
+    updates_channel = os.getenv("UPDATES_CHANNEL", "https://t.me/vibeshiftbots")
+    support_group = os.getenv("SUPPORT_GROUP", "https://t.me/Frozensupport1")
+
     caption = (
         f"👋 нєу {user_link} 💠, 🥀\n\n"
         f">🎶 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 {BOT_NAME.upper()}! 🎵\n"
@@ -443,10 +454,10 @@ async def go_back_callback(_, callback_query):
     buttons = [
         [
             InlineKeyboardButton(f"➕ {add_me_text}", url=f"{BOT_LINK}?startgroup=true"),
-            InlineKeyboardButton(f"📢 {updates_text}", url="https://t.me/vibeshiftbots")
+            InlineKeyboardButton(f"📢 {updates_text}", url=updates_channel)
         ],
         [
-            InlineKeyboardButton(f"💬 {support_text}", url="https://t.me/Frozensupport1"),
+            InlineKeyboardButton(f"💬 {support_text}", url=support_group),
             InlineKeyboardButton(f"❓ {help_text}", callback_data="show_help")
         ]
     ]
@@ -457,7 +468,6 @@ async def go_back_callback(_, callback_query):
         parse_mode=ParseMode.MARKDOWN,
         reply_markup=reply_markup
     )
-
 
 
 @bot.on_callback_query(filters.regex("^show_help$"))
