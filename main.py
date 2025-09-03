@@ -124,7 +124,7 @@ COOLDOWN = 10
 chat_last_command = {}
 chat_pending_commands = {}
 QUEUE_LIMIT = 20
-MAX_DURATION_SECONDS = 900  
+MAX_DURATION_SECONDS = 480  
 LOCAL_VC_LIMIT = 10
 playback_mode = {}
 
@@ -733,7 +733,7 @@ async def process_play_command(message: Message, query: str):
         secs = isodate.parse_duration(duration_iso).total_seconds()
         if secs > MAX_DURATION_SECONDS:
             await processing_message.edit(
-                "❌ Streams longer than 15 min are not allowed. If u are the owner of this bot contact @xyz09723 to upgrade your plan"
+                "❌ Streams longer than 8 min are not allowed. If u are the owner of this bot contact @xyz09723 to upgrade your plan"
             )
             return
 
