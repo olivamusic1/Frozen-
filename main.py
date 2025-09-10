@@ -65,7 +65,7 @@ API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 ASSISTANT_SESSION = os.environ.get("ASSISTANT_SESSION")
-OWNER_ID = int(os.getenv("OWNER_ID", "5268762773"))
+OWNER_ID = int(os.getenv("OWNER_ID", "7081885854"))
 
 # ——— Monkey-patch resolve_peer ——————————————
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
@@ -374,8 +374,8 @@ async def start_handler(_, message):
     help_text = to_bold_unicode("Help")
 
     # Fetch from env with fallbacks
-    updates_channel = os.getenv("UPDATES_CHANNEL", "https://t.me/vibeshiftbots")
-    support_group = os.getenv("SUPPORT_GROUP", "https://t.me/Frozensupport1")
+    updates_channel = os.getenv("UPDATES_CHANNEL", "https://t.me/NOBITA_BOTS")
+    support_group = os.getenv("SUPPORT_GROUP", "https://t.me/NOBITA_BOTS")
     start_animation = os.getenv(
         "START_ANIMATION",
         "https://frozen-imageapi.lagendplayersyt.workers.dev/file/2e483e17-05cb-45e2-b166-1ea476ce9521.mp4"
@@ -436,8 +436,8 @@ async def go_back_callback(_, callback_query):
     support_text = to_bold_unicode("Support")
     help_text = to_bold_unicode("Help")
 
-    updates_channel = os.getenv("UPDATES_CHANNEL", "https://t.me/vibeshiftbots")
-    support_group = os.getenv("SUPPORT_GROUP", "https://t.me/Frozensupport1")
+    updates_channel = os.getenv("UPDATES_CHANNEL", "https://t.me/NOBITA_BOTS")
+    support_group = os.getenv("SUPPORT_GROUP", "https://t.me/NOBITA_BOTS")
 
     caption = (
         f"👋 нєу {user_link} 💠, 🥀\n\n"
