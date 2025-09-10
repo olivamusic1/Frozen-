@@ -317,7 +317,7 @@ async def fetch_youtube_link_backup(query):
         raise Exception(f"Backup Search API error: {e}")
     
 BOT_NAME = os.environ.get("BOT_NAME", "Frozen Music")
-BOT_LINK = os.environ.get("BOT_LINK", "https://t.me/vcmusiclubot")
+BOT_LINK = os.environ.get("BOT_LINK", "https://t.me/AkazaMusicBot")
 
 from pyrogram.errors import UserAlreadyParticipant, RPCError
 
@@ -1164,7 +1164,7 @@ async def stop_handler(client, message):
         if "not in a call" in str(e).lower():
             await message.reply("❌ The bot is not currently in a voice chat.")
         else:
-            await message.reply(f"❌ An error occurred while leaving the voice chat: {str(e)}\n\nSupport: @frozensupport1")
+            await message.reply(f"❌ An error occurred while leaving the voice chat: {str(e)}\n\nSupport: @NOBITA_BOTS")
         return
 
     # Clear the song queue
@@ -1314,7 +1314,7 @@ async def reboot_handler(_, message):
 
         await message.reply("♻️ Rebooted for this chat. All data for this chat has been cleared.")
     except Exception as e:
-        await message.reply(f"❌ Failed to reboot for this chat. Error: {str(e)}\n\n support - @frozensupport1")
+        await message.reply(f"❌ Failed to reboot for this chat. Error: {str(e)}\n\n support - @NOBITA_BOTS")
 
 
 
@@ -1345,7 +1345,7 @@ async def ping_handler(_, message):
 
         await message.reply(response)
     except Exception as e:
-        await message.reply(f"❌ Failed to execute the command.\nError: {str(e)}\n\nSupport: @frozensupport1")
+        await message.reply(f"❌ Failed to execute the command.\nError: {str(e)}\n\nSupport: @NOBITA_BOTS")
 
 
 
